@@ -43,13 +43,6 @@ export const metadata: Metadata = {
   },
 };
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "Website",
-  "name": "ImageAlx",
-  "logo": `${process.env.NEXT_DEPLOY_WEB_URL}/favicon.ico`, // Provide your logo URL here
-  "url": process.env.NEXT_DEPLOY_WEB_URL,
-};
 
 export default async function RootLayout({
   children,
@@ -82,7 +75,6 @@ export default async function RootLayout({
           </ThemeProvider>
         </SessionProvider>
       </body>
-      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </html>
   );
 }

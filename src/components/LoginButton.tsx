@@ -26,7 +26,7 @@ export default function LoginButton() {
         setMuted(true)
     }, []);
 
-    console.log(data?.user?.email, 'and', process.env.NEXT_ACCESS_EMAIL)
+    console.log(data?.user)
 
     return (
         <div>
@@ -39,7 +39,7 @@ export default function LoginButton() {
                 <Button onClick={() => signIn('google', { callbackUrl: '/generate' })}>Login</Button>
             }
             {
-                !initialLoading && data?.user && <div className='flex items-center gap-x-2'>
+                !initialLoading && data?.user && data?.user.email && <div className='flex items-center gap-x-2'>
                     <DropdownMenu>
                         <DropdownMenuTrigger className=' outline-none'>
                             <Image src={data.user.image!} width={40} height={40} blurDataURL={data.user.image!} placeholder='blur' className=' rounded-full cursor-pointer shadow-lg' alt={data.user.name || 'John Due'} title={data.user.name || 'John Due'} />

@@ -26,6 +26,8 @@ export default function LoginButton() {
         setMuted(true)
     }, []);
 
+    console.log(data?.user?.email, 'and', process.env.NEXT_ACCESS_EMAIL)
+
     return (
         <div>
             {
@@ -47,7 +49,7 @@ export default function LoginButton() {
                                 Profile
                             </DropdownMenuItem>
                             {
-                                String(data?.user?.email) === String(process.env.NEXT_ACCESS_EMAIL) ?
+                                (data?.user?.email === process.env.NEXT_ACCESS_EMAIL) ?
                                     <DropdownMenuItem onClick={() => router.push('/admin')}>
                                         Dashboard
                                     </DropdownMenuItem> : null

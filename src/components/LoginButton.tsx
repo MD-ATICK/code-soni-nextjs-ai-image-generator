@@ -34,7 +34,7 @@ export default function LoginButton() {
             }
             {
                 !initialLoading && !data?.user &&
-                <Button onClick={() => signIn('google', { callbackUrl: '/generate' })}>Login</Button>
+                <Button aria-label='google-signIn' onClick={() => signIn('google', { callbackUrl: '/generate' })}>Login</Button>
             }
             {
                 !initialLoading && data?.user && <div className='flex items-center gap-x-2'>
@@ -42,18 +42,15 @@ export default function LoginButton() {
                         <DropdownMenuTrigger className=' outline-none'>
                             <Image src={data.user.image!} width={40} height={40} blurDataURL={data.user.image!} placeholder='blur' className=' rounded-full cursor-pointer shadow-lg' alt={data.user.name || 'John Due'} title={data.user.name || 'John Due'} />
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent align='end'>
+                        <DropdownMenuContent align='end' className=' bg-black '>
                             <DropdownMenuItem onClick={() => router.push('/profile')}>
-                                {/* <Link className=' h-full w-full' href={'/profile'}> */}
                                 Profile
-                                {/* </Link> */}
                             </DropdownMenuItem>
                             <DropdownMenuItem onClick={async () => await signOut({ redirectTo: '/' })}>
                                 Logout
                             </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
-                    {/* <Button onClick={async () => await signOut({ redirectTo: '/' })} variant={'destructive'}>Logout</Button> */}
                 </div>
             }
         </div>

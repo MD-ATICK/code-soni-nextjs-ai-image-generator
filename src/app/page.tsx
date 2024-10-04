@@ -8,13 +8,13 @@ import Link from "next/link";
 export default function Home() {
 
   return (
-    <div className=" h-[calc(100vh-80px)] px-4 w-full md:max-w-[50%] gap-6 mx-auto text-center flex flex-col justify-center items-center">
+    <main className=" h-[calc(100vh-80px)] px-4 w-full md:max-w-[50%] gap-6 mx-auto text-center flex flex-col justify-center items-center">
       <WebTitle variant={'large'} />
       <ApplyMotion type='text'>
         ImageAlx is an AI-powered image generator that helps you create stunning and realistic images for free. Ideal for creative professionals, marketers, and content creators in Bangladesh and beyond.
       </ApplyMotion>
-      <Link href={'/generate'} className=" bg-gray-200 dark:bg-white rounded-md">
-        <Button className=" gap-x-1 bg-gradient-to-r from-pink-800 via-purple-700 to-blue-800 text-transparent bg-clip-text ">
+      <Link href={'/generate'} className=" generate-page bg-gray-200 dark:bg-white rounded-md">
+        <Button aria-label="generate image" className=" gap-x-1 bg-gradient-to-r from-pink-800 via-purple-700 to-blue-800 text-transparent bg-clip-text ">
           Generate Image
           {/* todo : learn this how work that. */}
           <svg width="0" height="0">
@@ -27,6 +27,6 @@ export default function Home() {
           <Brain size={25} style={{ fill: 'url(#gradient1)' }} />
         </Button>
       </Link>
-    </div>
+    </main>
   );
 }

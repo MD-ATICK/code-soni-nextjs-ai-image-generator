@@ -71,7 +71,7 @@ export default function GenerateClient() {
                                 </FormItem>
                             )}
                         />
-                        <Button disabled={isLoading} type='submit' className=' w-full text-white hover:opacity-85 bg-gradient-to-r from-pink-700 via-purple-600 to-blue-700' >
+                        <Button aria-label='generate button' disabled={isLoading} type='submit' className=' w-full text-white hover:opacity-85 bg-gradient-to-r from-pink-700 via-purple-600 to-blue-700' >
                             {
                                 isLoading ? <BeatLoader color='white' />
                                     : 'Generate'
@@ -93,7 +93,7 @@ export default function GenerateClient() {
                         <div className=' absolute h-full w-full flex z-0 justify-center shadow-lg items-center bg-gray-900 rounded-2xl'>
                             <MoonLoader color='white' />
                         </div>
-                        <Button disabled={!generatedImage} onClick={() => handleDownload({ imageName: generatedImage.imageName, imageUrl: generatedImage.imageUrl })} className=' -bottom-14 hover:opacity-85 absolute w-full text-white bg-gradient-to-r from-pink-700 via-purple-600 to-blue-700' >Download</Button>
+                        <Button aria-label='download-image' disabled={!generatedImage} onClick={() => handleDownload({ imageName: generatedImage.imageName, imageUrl: generatedImage.imageUrl })} className=' -bottom-14 hover:opacity-85 absolute w-full text-white bg-gradient-to-r from-pink-700 via-purple-600 to-blue-700' >Download</Button>
                     </div>
                 }
             </div>

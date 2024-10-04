@@ -34,7 +34,7 @@ export default function LoginButton() {
             }
             {
                 !initialLoading && !data?.user &&
-                <Button aria-label='google-signIn' onClick={() => signIn('google', { callbackUrl: '/generate' })}>Login</Button>
+                <Button onClick={() => signIn('google', { callbackUrl: '/generate' })}>Login</Button>
             }
             {
                 !initialLoading && data?.user && <div className='flex items-center gap-x-2'>

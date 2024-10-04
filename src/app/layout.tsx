@@ -63,7 +63,7 @@ export default async function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="google-site-verification" content="6GmT2Do1lN7VtwEFDc82A70PsvPJHHw07NtB75FFIew" />
-        <link className="canonical-url" rel="canonical" href={`${process.env.NEXT_DEPLOY_WEB_URL}`} />
+        <link rel="canonical" href={`${process.env.NEXT_DEPLOY_WEB_URL}`} />
 
       </head>
       <body

@@ -10,13 +10,17 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ error: 'Unauthorized - Please login!' }, { status: 401 })
     }
 
+    if (session.posts.length >= 20) {
+        return NextResponse.json({ error: 'You have been generated max limit!' }, { status: 401 })
+    }
+
     const { prompt } = await request.json()
 
     function generateRandomNumber() {
         return Math.floor(Math.random() * 100000000) + 1;
     }
 
-    const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?seed=${generateRandomNumber()}&width={512}&height={512}&nologo=True`
+    const imageUrl = `${process.env.NEXT_AI_API_BASE_URL}/prompt/${encodeURIComponent(prompt)}?seed=${generateRandomNumber()}&width={512}&height={512}&nologo=True`
 
 
     await prisma.post.create({

@@ -52,6 +52,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   posts         Post[]
+  createdAt     DateTime  @default(now())
 
   @@map("users")
 }

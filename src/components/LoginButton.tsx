@@ -47,10 +47,10 @@ export default function LoginButton() {
                                 Profile
                             </DropdownMenuItem>
                             {
-                                data?.user.email === process.env.NEXT_ACCESS_EMAIL &&
-                                <DropdownMenuItem onClick={() => router.push('/admin')}>
-                                    Dashboard
-                                </DropdownMenuItem>
+                                String(data?.user?.email) === String(process.env.NEXT_ACCESS_EMAIL) ?
+                                    <DropdownMenuItem onClick={() => router.push('/admin')}>
+                                        Dashboard
+                                    </DropdownMenuItem> : null
                             }
                             <DropdownMenuItem onClick={async () => await signOut({ redirectTo: '/' })}>
                                 Logout

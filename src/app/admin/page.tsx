@@ -49,6 +49,7 @@ export default async function AdminPage() {
                         <TableHead>Email</TableHead>
                         <TableHead className="text-right">POSTS</TableHead>
                         <TableHead className="text-right">CREATED_AT</TableHead>
+                        <TableHead className="text-right">ACTION</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -62,6 +63,11 @@ export default async function AdminPage() {
                             <TableCell className=" text-xs sm:text-sm font-medium">{user.email}</TableCell>
                             <TableCell className="text-center font-semibold text-xs sm:text-sm">{user.posts.length || 0}</TableCell>
                             <TableCell className='text-right text-xs sm:text-sm whitespace-nowrap'>{moment(user?.createdAt || new Date()).startOf('minutes').fromNow()}</TableCell>
+                            <TableCell className=" text-xs sm:text-sm h-10 py-1 font-medium">
+                                <div className=" h-full w-[80%] ml-auto bg-gray-800 hover:bg-gray-700 rounded-md">
+                                    <Link href={`/admin/${user.id}`} className='h-full w-full flex justify-center items-center'>Show</Link>
+                                </div>
+                            </TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

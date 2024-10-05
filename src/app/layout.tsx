@@ -11,11 +11,12 @@ import "./globals.css";
 const inter = Montserrat({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  applicationName: "ImageAlx",
   title: `ImageAlx - Free Amazing AI Image Generator`,
   description: 'ImageAlx is Fully Free an AI-powered image generator that helps you create stunning and realistic images for free. Ideal for creative professionals, marketers, and content creators in Bangladesh and beyond.',
   keywords: 'ImageAlx, AI image generator, create images, artificial intelligence images, free image generator, AI tools, ImageAlx Bangladesh, image creation AI , ai image generator, text to image, image creation tool, ai art generator, generate images online, ai image creator, ai-powered design, image generator from text, create digital art, ai photo generator, image generation tool, instant image creation, ai graphic design, custom ai images, ai art creation, realistic ai images, ai image synthesis, creative image generator, ai art creation tool, ai image generation platform',
   icons: {
-    icon: '/favicon.ico', // favicon for the website
+    icon: '/favicon.png', // favicon for the website
   },
   openGraph: {
     title: 'ImageAlx - AI Image Generator',
@@ -55,7 +56,9 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="application-name" content="ImageAlx" />
         <meta name="google-site-verification" content="6GmT2Do1lN7VtwEFDc82A70PsvPJHHw07NtB75FFIew" />
+        <link rel="icon" href="/favicon.png" />
         <link rel="canonical" href={`${process.env.NEXT_DEPLOY_WEB_URL}`} />
 
       </head>

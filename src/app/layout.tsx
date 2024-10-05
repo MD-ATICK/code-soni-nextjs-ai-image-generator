@@ -5,6 +5,7 @@ import { auth } from "@/lib/auth";
 import type { Metadata } from "next";
 import { SessionProvider } from 'next-auth/react';
 import { Montserrat } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 
@@ -67,7 +68,19 @@ export default async function RootLayout({
       <head>
         <meta name="google-site-verification" content="6GmT2Do1lN7VtwEFDc82A70PsvPJHHw07NtB75FFIew" />
         <link rel="canonical" href={`${process.env.NEXT_DEPLOY_WEB_URL}`} />
-        <script defer data-domain="imagealx.vercel.app" src="https://plausible.io/js/script.js"></script>
+        <Script defer data-domain="imagealx.vercel.app" src="https://plausible.io/js/script.js"></Script>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-LDLDGKLFXF"></Script>
+        <Script
+          id="G-LDLDGKLFXF"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-LDLDGKLFXF');
+            `,
+          }}
+        />
       </head>
       <body
         className={`${inter.className} overflow-x-hidden`}

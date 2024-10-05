@@ -67,7 +67,7 @@ export default async function RootLayout({
       <head>
         <meta name="google-site-verification" content="6GmT2Do1lN7VtwEFDc82A70PsvPJHHw07NtB75FFIew" />
         <link rel="canonical" href={`${process.env.NEXT_DEPLOY_WEB_URL}`} />
-
+        <script defer data-domain="imagealx.vercel.app" src="https://plausible.io/js/script.js"></script>
       </head>
       <body
         className={`${inter.className} overflow-x-hidden`}

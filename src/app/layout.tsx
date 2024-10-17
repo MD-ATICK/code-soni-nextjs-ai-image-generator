@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     siteName: process.env.NEXT_WEB_NAME,
-    title: process.env.NEXT_WEB_NAME,
+    title: process.env.NEXT_WEB_TITLE,
     description: process.env.NEXT_WEB_DESCRIPTION,
     url: ` ${process.env.NEXT_DEPLOY_WEB_URL}`,
     type: 'website',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: process.env.NEXT_WEB_NAME,
+    title: process.env.NEXT_WEB_TITLE,
     description: process.env.NEXT_WEB_DESCRIPTION,
     images: [`${process.env.NEXT_DEPLOY_WEB_URL}/twitter.jpg`],
   },
